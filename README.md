@@ -10,5 +10,5 @@ The computers at the Austin Central Library block a number of things at a surfac
 ## Getting Started
 
 - Install Python [Download](https://www.python.org/downloads/)
-- Install Git
+- Install Git [Download](https://git-scm.com/)
 - Run cmd.bat
