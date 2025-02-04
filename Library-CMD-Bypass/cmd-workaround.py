@@ -12,10 +12,12 @@ while True:
     handler = user_input.split()
 
     try:
-        if handler[0] in ["clear", "cls"]:
+        if not handler:
+            continue
+        elif handler[0] in ["clear", "cls"]:
             os.system('cls')
             continue
-        if handler[0] == "cd":
+        elif handler[0] == "cd":
             os.chdir(os.path.expanduser(handler[1]))
             continue
         result = subprocess.Popen(['cmd', '/C'] + handler, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
