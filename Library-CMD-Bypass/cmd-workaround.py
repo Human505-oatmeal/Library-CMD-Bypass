@@ -1,15 +1,11 @@
 import os, sys, subprocess, io
 
+
 print(f"Hello! {os.getlogin()}")
-#  TODO
-#  Encode output with UTF-8
-#  directly communicate via the .communicate() method.
-#  Handle weird stdout errors..
-
 while True:
-    user_input = input(f"{os.getcwd()} > ").lower()
+    user_input = input(f"{os.getcwd()} > ").strip().lower()
 
-    if user_input.strip().lower() in ['exit', 'quit']:  # Exit condition for the loop
+    if user_input in ['exit', 'quit']:  # Exit condition for the loop
         print("Exiting...")
         break
 
@@ -18,15 +14,16 @@ while True:
     try:
         if handler[0] in ["clear", "cls"]:
             os.system('cls')
+            continue
         if handler[0] == "cd":
             os.chdir(os.path.expanduser(handler[1]))
             continue
-        result = subprocess.Popen(['cmd', '/C'] + handler, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['cmd', '/C'] + handler, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         stdout_output, stderr_output = result.communicate()
-        if result.stdout:
-            print(stdout_output.decode())
-        if result.stderr:
-            print(stderr_output.decode(), file=sys.stderr)
+        if stdout_output:
+            print(stdout_output, end="")
+        if stderr_output:
+            print(stderr_output, file=sys.stderr)
     except FileNotFoundError:
         print(f"Command not found: {handler[0]}")
     except Exception as e:
