@@ -11,7 +11,7 @@ The computers at the Austin Central Library block a number of things at a surfac
 
 - Install Python [Download](https://www.python.org/ftp/python/3.13.1/python-3.13.1-amd64.exe)
 - Install Git [Download](https://github.com/git-for-windows/git/releases/download/v2.47.1.windows.2/Git-2.47.1.2-64-bit.exe)
-- Run cmd.bat
+- Run `cmd.bat`
 
 ## Automated powershell installer
 *coming soon*
