@@ -9,7 +9,7 @@ The computers at the Austin Central Library block a number of things at a surfac
 
 ## Getting Started
 
-- Install Python [Download](https://www.python.org/ftp/python/3.13.1/python-3.13.1-amd64.exe/)
+- Install Python [Download](https://www.python.org/ftp/python/3.13.1/python-3.13.1-amd64.exe)
 - Install Git [Download](https://git-scm.com/)
 - Run cmd.bat
 
